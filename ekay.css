@@ -171,3 +171,13 @@ footer {
     text-align: center; 
   }
 }
+@media (max-width: 576px) {
+  .navbar {
+    padding: 8px;
+  }
+}
+@media (max-width: 480px) {
+  .navbar {
+    padding: 6px;
+  }
+}
