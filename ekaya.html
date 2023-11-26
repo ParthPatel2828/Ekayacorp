@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ekaya</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="ekay.css">
+  
+</head>
+<body>
+
+ 
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#about"><img src="IMG/Ekaya_Final_Logo-removebg-preview.png"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive" style="justify-content: center;">
+        <ul class="navbar-nav ml-auto text-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#product">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+  
+  
+  <div class="container-fluid mt-5">
+  <section id="about" class="mt-5" style="padding: 140px 0;">
+      <h2>About Us</h2>
+      <div class="banner">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 text-center">
+                    <div class="row image mx-4 my-5 ms-auto">
+                        <img src="IMG/Light-blue-background-image-for-perfume-and-powder-web-design.jpeg" alt="#">  
+                    </div>
+                   
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="row text  mx-4 my-5 ms-auto">
+                        <h4>Welcome to Ekaya Corp</h4>
+                        <p class="paragraph-style">Your Gateway to Exceptional Flavors and Fragrances
+
+                          Ekaya Corp is a distinguished name in the trading landscape, offering a diverse range of superior-quality flavors and fragrances that redefine sensory experiences. As a leading trading partner, we leverage our expertise and global network to provide access to premium aromatic solutions.</p>
+                          <div class="flex-slider">
+                            <div class="flex-item"  data-text="Industry we serve">
+                            </div>
+                              
+                            <div class="flex-item" data-text="Food & Beverages">
+                            </div>
+                                
+                            
+                            <div class="flex-item" data-text="Cosmetics & Personal Care">
+                            </div>
+                             
+                            <div class="flex-item" data-text="Cleaning & Household">
+                            </div>
+                            
+                        </div>
+                          <div class="col-lg-6 col-md-6 col-sm-12 mt-5">
+                           <a href="./Ekaya Corporation-Product List - Flavours & Fragnance.pdf" download class="download-btn">Download OUR PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    
+
+    
+    <section id="product" class="container mb-4">
+      <h2>Our Products</h2>
+      
+      <div id="productSlider" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner mt-5">
+          
+          <div class="carousel-item active">
+            <img src="IMG/W1.jpeg" style="height: 450px;" class="d-block w-100" alt="Product 1">
+          </div>
+          <div class="carousel-item">
+            <img src="IMG/W2.jpeg" style="height: 450px;" class="d-block w-100" alt="Product 2">
+          </div>
+          <div class="carousel-item">
+            <img src="IMG/W3.jpeg" style="height: 450px;" class="d-block w-100" alt="Product 3">
+          </div>
+          <div class="carousel-item">
+            <img src="IMG/W4.jpeg" style="height: 450px;" class="d-block w-100" alt="Product 3">
+          </div>
+          <div class="carousel-item">
+            <img src="IMG/W5.jpeg" style="height: 450px;" class="d-block w-100" alt="Product 3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#productSlider" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#productSlider" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    
+     </div>
+     <section id="contact">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6">
+                  <h2>Contact Us</h2>
+                  <form id="contactForm" onsubmit="submitForm(event);">
+                      <label for="name">Name:</label>
+                      <input type="text" id="name" name="name" class="form-control" required>
+  
+                      <label for="email">Email:</label>
+                      <input type="email" id="email" name="email" class="form-control" required>
+  
+                      <label for="message">Message:</label>
+                      <textarea id="message" name="message" rows="4" class="form-control" required></textarea>
+  
+                      <button type="submit" class="download-btn" style="margin-top: 20px; margin-bottom: 50px; border:none;">Submit</button>
+
+                      <div class="verification-message" id="verificationMessage"></div>
+                  </form>
+              </div>
+              <div class="col-md-6">
+                  <h2>Get in Touch</h2>
+                  <p>Feel free to reach out to us via phone or email:</p>
+                  <p><strong>Email:</strong> <a href="mailto:nirav.ekaya@gmail.com" style="text-decoration: none;">nirav.ekaya@gmail.com</a></p>
+                  <p><strong>Phone:</strong> <a href="tel:+919265062995" style="text-decoration: none;">+91-9265062995</a></p>
+                  <p><strong>WhatsApp:</strong> <a href="https://wa.me/919265062995" style="text-decoration: none;">𝐄𝐊𝐀𝐘𝐀 𝐂𝐨𝐫𝐩𝐨𝐫𝐚𝐭𝐢𝐨𝐧</a></p>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <footer class="text-white text-center py-3">
+    <p>&copy; Ekaya Corporation | All Rights Reserved</p>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="ekay.js"></script>
+</body>
+</html>
