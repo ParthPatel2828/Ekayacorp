@@ -9,6 +9,7 @@ document.querySelectorAll('a.nav-link').forEach(anchor => {
   });
 });
 
+
 function submitForm(event) {
   event.preventDefault();
 
