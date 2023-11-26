@@ -161,6 +161,16 @@ footer {
   .navbar {
     padding: 10px; 
   }
+  @media (max-width: 350px) {
+    .navbar {
+      padding: 5px;
+    }
+  }
+  @media (max-width: 342px) {
+    .navbar {
+      padding: 2px;
+    }
+  }
 
   .navbar-brand img {
     height: auto;
@@ -169,15 +179,5 @@ footer {
 
   .navbar-nav .nav-link {
     text-align: center; 
-  }
-}
-@media (max-width: 576px) {
-  .navbar {
-    padding: 8px;
-  }
-}
-@media (max-width: 480px) {
-  .navbar {
-    padding: 6px;
   }
 }
