@@ -12,6 +12,7 @@
 .navbar-nav .nav-link:hover {
     color:#0470b8; 
     border-bottom: 1px solid #0470b8;
+    border-top: 1px solid #0470b8;
     max-width: 120px;
 }
 .navbar-toggler:focus {
