@@ -8,3 +8,7 @@ window.addEventListener('scroll', function() {
       navbar.style.backgroundColor = 'transparent';
   }
 });
+
+
+
+

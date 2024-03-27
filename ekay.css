@@ -30,6 +30,7 @@
 .search.btn:hover{
     background-color: #94cff7;
     color: #fff;
+    border-radius: 20px;
 }
 
 .form-control:focus{
@@ -41,7 +42,96 @@
     background-image: url('IMG/autumn-seasonal-golden-leaf-wallpaper.jpg');
     height: 87vh; 
     width: 100%; 
-    background-size: cover; /* Cover the entire container */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
 }
+.about.button {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+    background: #03899b;
+    background-size: 400%;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .about.button:hover::before {
+    transform: scaleX(1);
+
+  }
+  
+  .button-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .about.button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background: linear-gradient(
+      82.3deg,
+      rgb(10, 169, 197) 10.8%,
+      rgb(24, 197, 250) 94.3%
+    );
+    transition: all 0.475s;
+  }
+  .card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card img {
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: rotate(360deg); /* Adjust the degree of rotation as needed */
+}
+
+.card-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-body {
+    transform: translateY(0);
+}
+.text-overlay {
+    position: absolute;
+    top: 10px; 
+    left: 10px; 
+    color: white; 
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, sans-serif; 
+    z-index: 1; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 5px 10px; 
+     border-radius: 5px;
+}
+
+
+
+  
+  
+  
