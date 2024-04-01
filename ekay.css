@@ -69,6 +69,27 @@
     justify-content: center; 
     align-items: center;
 }
+.hed p{
+    font-family: emoji;
+    color: #000000;
+    line-height: 40px;
+    font-size: 30px;
+}
+@media (max-width:537px){
+    .hed p{
+        font-size: 22px;
+    }
+}
+@media (max-width:400px) {
+    .hed p{
+        font-size: 19.8px;
+    }
+}
+@media (max-width:363px){
+    .hed p{
+        font-size: 16.9px;
+    }
+}
 .about.button {
     position: relative;
     overflow: hidden;
@@ -80,6 +101,7 @@
     color: #fff;
     border: none;
     cursor: pointer;
+    align-items: center;
   }
   
   .about.button:hover::before {
