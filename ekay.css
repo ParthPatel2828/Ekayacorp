@@ -179,17 +179,35 @@
     }
     .about.container-fluid{
     background-image: url('IMG/43996-removebg.png');
-    height: 80vh; 
+    height: 110vh; 
     width: 100%; 
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
+    }
+    @media (max-width:932px){
+        .about.container-fluid{
+            height: 150vh; 
+        }
+    }
+    @media (max-width:432px){
+        .about.container-fluid{
+            height: 170vh; 
+            
+        }
+    }
+    @media (max-width:374px){
+        .about.container-fluid{
+            height: 185vh; 
+            
+        }
     }
     h1#about{
      color: #3ea2b3;
     }
     .about .abt{
         font-size: 21px;
+        font-family: sans-serif;
         color: #000;
     }
     @media(max-width:480px){
