@@ -177,38 +177,40 @@
          padding: 5px 10px;  
         border-radius: 5px;
     }
-    .about.container-fluid{
-    background-image: url('IMG/43996-removebg.png');
-    height: 110vh; 
-    width: 100%; 
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-   
-    }
-    @media (max-width: 932px) {
-        .about.container-fluid {
-            height: 147vh;
-        }
+    .about.container-fluid {
+        background-image: url('IMG/43996-removebg.png');
+        height: 110vh; 
+        width: 100%; 
+        background-size: cover; 
+        background-position: center; 
+        background-repeat: no-repeat; 
     }
     
+    @media (max-width: 768px) {
+        .about.container-fluid {
+            height: 150vh; 
+        }
+    }
+
     @media (max-width: 432px) {
         .about.container-fluid {
-            height: 108vh; 
+            height: 108vh;
+           
         }
     }
     
     @media (max-width: 375px) {
         .about.container-fluid {
-            height: 164vh;
+            height: 164vh; 
         }
-    } 
-
+    }
+    
     @media (max-width: 342px) {
         .about.container-fluid {
             height: 188vh;
         }
     }
+    
 
     h1#about{
      color: #3ea2b3;
