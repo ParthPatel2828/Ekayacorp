@@ -192,13 +192,13 @@
     }
     @media (max-width:432px){
         .about.container-fluid{
-            height: 125vh; 
+            height: 167vh; 
             
         }
     }
     @media (max-width:374px){
         .about.container-fluid{
-            height: 100vh; 
+            height: 170vh; 
             
         }
     }
