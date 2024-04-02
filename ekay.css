@@ -184,22 +184,23 @@
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
+   
     }
     @media (max-width: 932px) {
         .about.container-fluid {
-            height: 150vh;
+            height: 147vh;
         }
     }
     
     @media (max-width: 432px) {
         .about.container-fluid {
-            height: 160vh; 
+            height: 108vh; 
         }
     }
     
-    @media (max-width: 374px) {
+    @media (max-width: 375px) {
         .about.container-fluid {
-            height: 169vh;
+            height: 164vh;
         }
     } 
 
