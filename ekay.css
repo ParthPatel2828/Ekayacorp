@@ -167,15 +167,30 @@
     .text-overlay {
         position: absolute;
         top: 10px; 
-         left: 10px;
+        left: 10px;
         color: hwb(0 100% 0%); 
-        font-size: 23px;
+        font-size: 20px;
         font-weight: bold;
         font-family: Arial, sans-serif; 
         z-index: 1; 
         background-color: rgba(0, 0, 0, 0.336);  
-        padding: 5px 10px; 
+         padding: 5px 10px;  
         border-radius: 5px;
+    }
+    .about.container-fluid{
+    background-image: url('IMG/43996-removebg.png');
+    height: 80vh; 
+    width: 100%; 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    }
+    h1#about{
+     color: #3ea2b3;
+    }
+    .about .abt{
+        font-size: 21px;
+        color: #000;
     }
     @media(max-width:480px){
         p.card-text{
@@ -194,6 +209,7 @@
             font-size:16px;
         } 
     }
+   
 
 
   
