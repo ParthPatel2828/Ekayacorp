@@ -9,11 +9,19 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 document.addEventListener("DOMContentLoaded", function() {
+    var highlightedElements = []; // To store highlighted elements
+
     document.querySelector(".d-flex").addEventListener("submit", function(event) {
         event.preventDefault(); // Prevent form submission
 
         var searchText = document.getElementById("searchInput").value.trim().toLowerCase();
         var found = false;
+
+        // Clear previous highlights
+        highlightedElements.forEach(function(element) {
+            resetTextHighlight(element);
+        });
+        highlightedElements = []; // Reset highlighted elements array
 
         // Check for the searched item in product names
         var productNames = document.querySelectorAll(".product-card h2");
@@ -22,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 name.closest('.product-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
                 highlightText(name, searchText); // Highlight similar words
                 found = true;
+                highlightedElements.push(name); // Store highlighted element
             } else {
                 resetTextHighlight(name); // Reset font color if not found
             }
@@ -36,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     row.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     highlightText(cell, searchText); // Highlight similar words
                     found = true;
+                    highlightedElements.push(cell); // Store highlighted element
                 } else {
                     resetTextHighlight(cell); // Reset font color if not found
                 }
@@ -71,6 +81,7 @@ function highlightText(element, searchText) {
 function resetTextHighlight(element) {
     element.innerHTML = element.textContent;
 }
+
 
 
 
