@@ -185,6 +185,42 @@
         background-position: center; 
         background-repeat: no-repeat; 
     }
+
+    h1#products{
+        color: #3ea2b3;
+       }
+    .product-card {
+        background-color: #c3ddf35b; 
+        border: 2px solid transparent; 
+        border-radius: 14px;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: border-color 0.3s ease;
+      }
+      
+      .product-card:hover {
+        border-color: #01b3ee; 
+      }
+      
+      .product-card h2 {
+        margin-bottom: 15px;
+      }
+      
+      ul {
+        list-style-type: none; 
+        padding-left: 0; 
+      }
+      
+      li {
+        margin-bottom: 8px; 
+        font-size: 16px;  
+        color: #333;    
+      }
+      
+      li:hover {
+        color: #0f69bd; 
+      }
+      
     
     @media (max-width: 768px) {
         .about.container-fluid {
@@ -237,7 +273,17 @@
             font-size:16px;
         } 
     }
-   
+
+    .table tbody tr :nth-of-type(odd) {
+        background-color: #1786c78f;
+    }
+    
+    .table tbody tr :nth-of-type(even) {
+        background-color: #1586b360;
+    }
+
+  
+  /* Center table headings */
 
 
   
