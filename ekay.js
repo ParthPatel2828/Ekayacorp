@@ -8,3 +8,66 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   });
 });
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector(".d-flex").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        var searchText = document.getElementById("searchInput").value.trim().toLowerCase();
+        var found = false;
+
+        // Check for the searched item in product names
+        var productNames = document.querySelectorAll(".product-card h2");
+        productNames.forEach(function(name) {
+            if (name.textContent.toLowerCase().includes(searchText)) {
+                name.closest('.product-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                highlightText(name, searchText); // Highlight similar words
+                found = true;
+            } else {
+                resetTextHighlight(name); // Reset font color if not found
+            }
+        });
+
+        // Check for the searched item in table cells (both Name and FEMA #)
+        var tableRows = document.querySelectorAll("#products table tbody tr");
+        tableRows.forEach(function(row) {
+            var cells = row.querySelectorAll("td");
+            cells.forEach(function(cell) {
+                if (cell.textContent.toLowerCase().includes(searchText)) {
+                    row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    highlightText(cell, searchText); // Highlight similar words
+                    found = true;
+                } else {
+                    resetTextHighlight(cell); // Reset font color if not found
+                }
+            });
+        });
+
+        // Display result
+        if (!found) {
+            alert("This item is not available. Please contact us for further assistance.");
+        }
+
+        // Clear the search input
+        document.getElementById("searchInput").value = "";
+    });
+});
+
+// Function to highlight similar words
+function highlightText(element, searchText) {
+    var innerHTML = element.innerHTML.toLowerCase();
+    var index = innerHTML.indexOf(searchText);
+    if (index >= 0) {
+        var matchedText = element.textContent.substr(index, searchText.length);
+        var highlightedText = "<span style='background-color: yellow;'>" + matchedText + "</span>";
+        innerHTML = element.innerHTML.substr(0, index) + highlightedText + element.innerHTML.substr(index + searchText.length);
+        element.innerHTML = innerHTML;
+    }
+}
+
+// Function to reset text highlight
+function resetTextHighlight(element) {
+    element.innerHTML = element.textContent;
+}
+
+
+
