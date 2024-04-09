@@ -44,8 +44,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Display result
         if (!found) {
-            alert("This item is not available. Please contact us for further assistance.");
+            // Alert message with WhatsApp and email icons as buttons
+            var alertMessage = "This item is not available. Please contact us on Phone or Email for further assistance.";
+            alert(alertMessage);
         }
+        
 
         // Clear the search input
         document.getElementById("searchInput").value = "";
