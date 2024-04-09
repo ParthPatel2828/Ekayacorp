@@ -9,6 +9,18 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 document.addEventListener("DOMContentLoaded", function() {
+    var backToTopButton = document.getElementById("back-to-top");
+    
+    window.addEventListener("scroll", function() {
+      backToTopButton.style.display = window.scrollY > 260 ? "flex" : "none";
+    });
+    
+    backToTopButton.addEventListener("click", function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    });
+document.addEventListener("DOMContentLoaded", function() {
     var highlightedElements = []; // To store highlighted elements
 
     document.querySelector(".d-flex").addEventListener("submit", function(event) {
