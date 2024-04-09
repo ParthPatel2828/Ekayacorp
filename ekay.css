@@ -375,23 +375,29 @@
 
 @media (max-width: 480px) {
     #whatsapp {
-        font-size: 19px;
-        padding: 9px 12px;
-        margin: -9px -30px;
+        font-size: 15px;
+        padding: 12px 15px;
+        margin: -13px -30px;
         bottom: 80px;
     }
 }
 
 
 .btn-primary {
-    background-color: #0b576e;
-    border-color: #0b576e;
+    background-color: #c3ddf35b; 
+    border: 2px solid transparent; 
+    color: #03899b;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
     align-items: center;
 }
 
 .btn-primary:hover {
-    background-color: #0a4758;
-    border-color: #0a4758;
+    border-color: #01b3ee; 
+    background-color: #c3ddf35b;
+    color: #01b3ee;
 }
 
 
