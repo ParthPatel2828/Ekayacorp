@@ -285,6 +285,12 @@
   
   /* Center table headings */
 
+  @media (max-width:355px){
+    th{
+        font-size: 14px;
+    }
+  }
+
 
   
   
