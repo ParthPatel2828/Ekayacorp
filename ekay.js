@@ -94,6 +94,17 @@ function resetTextHighlight(element) {
     element.innerHTML = element.textContent;
 }
 
+$(document).ready(function() {
+    // Change border color on focus
+    $('.form-control').focus(function() {
+        $(this).css('border-color', 'lightblue');
+    });
+    // Reset border color on blur
+    $('.form-control').blur(function() {
+        $(this).css('border-color', '');
+    });
+});
+
 
 
 
