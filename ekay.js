@@ -62,6 +62,20 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
+        // Check for the searched item in list items
+        var listItems = document.querySelectorAll(".product-card li");
+        listItems.forEach(function(item) {
+            if (item.textContent.toLowerCase().includes(searchText)) {
+                item.closest('.product-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                highlightText(item, searchText); // Highlight similar words
+                found = true;
+                highlightedElements.push(item); // Store highlighted element
+            } else {
+                resetTextHighlight(item); // Reset font color if not found
+            }
+        });
+
+
         // Check for the searched item in table cells (both Name and FEMA #)
         var tableRows = document.querySelectorAll("#products table tbody tr");
         tableRows.forEach(function(row) {
@@ -78,12 +92,16 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
 
-        // Display result
-        if (!found) {
-            // Alert message with WhatsApp and email icons as buttons
-            var alertMessage = "This item is not available. Please contact us on Phone or Email for further assistance.";
-            alert(alertMessage);
-        }
+       // Display result
+       if (!found) {
+        // Redirect to the contact page using its ID
+        window.location.href = "#contact";
+        var alertMessage = "Please contact us on Phone or Email for further assistance.";
+        alert(alertMessage);
+        
+    }
+    
+
         
 
         // Clear the search input
