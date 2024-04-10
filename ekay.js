@@ -1,3 +1,17 @@
+document.addEventListener("DOMContentLoaded", function() {
+    var navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+    navLinks.forEach(function(navLink) {
+      navLink.addEventListener("click", function() {
+        var navbarToggler = document.querySelector(".navbar-toggler");
+        if (navbarToggler.classList.contains("collapsed")) {
+          return; // Navbar is already collapsed, no need to close it
+        }
+        var navbarCollapse = document.querySelector(".navbar-collapse");
+        navbarCollapse.classList.remove("show");
+        navbarToggler.classList.add("collapsed");
+      });
+    });
+  });
 document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', function() {
       var navbar = document.querySelector('.navbar');

@@ -303,10 +303,6 @@
     color: #fff;
     margin: 2px;
 }
-
-#back-to-top:hover {
-    background-color: #2cb2ffc4;
-}
 @media (max-width: 850px) {
     #back-to-top {
         font-size: 22px;
@@ -461,4 +457,46 @@ h1#contact{
     border-color: lightblue;
 }
 
+footer {
+    background-color: #1eacbe96; 
+    color: #fff; 
+  }
+  
+  footer a {
+    color: #fff; 
+  }
+  
+  footer a:hover {
+    color: #084269;
+  }
+  
+  
+  .social-links {
+    margin-top: 20px;
+  }
+  
+  .social-links a {
+    color: #fff;
+    margin-right: 10px;
+  }
+  
+  .social-links a:hover {
+    color: #ccc;
+  }
+  
+  .quick-links li {
+    margin-bottom: 10px;
+  }
+  
+  .quick-links li a {
+    color: #fff;
+  }
+  
+  .quick-links li a:hover {
+    color: #ccc;
+  }
+  footer a {
+    text-decoration: none;
+  }
+  
 
