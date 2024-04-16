@@ -77,17 +77,17 @@
 }
 @media (max-width:537px){
     .hed p{
-        font-size: 30px;
+        font-size: 22px;
     }
 }
 @media (max-width:400px) {
     .hed p{
-        font-size: 21.8px;
+        font-size: 19.8px;
     }
 }
 @media (max-width:363px){
     .hed p{
-        font-size: 18.9px;
+        font-size: 16.9px;
     }
 }
 .about.button {
