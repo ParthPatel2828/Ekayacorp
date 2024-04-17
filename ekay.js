@@ -116,7 +116,7 @@ function resetTextHighlight(element) {
     element.innerHTML = element.textContent;
 }
 
-const url = 'https://mail-sender-api1.p.rapidapi.com/';
+const url = 'https://rapidmail.p.rapidapi.com/';
 const apiKey = '31257d2cf5msh4aa2f902e119ecbp112e62jsn5b81efd50058';
 
 async function sendMail(data) {
@@ -126,7 +126,7 @@ async function sendMail(data) {
             name: data.get('name'),
             replyTo: data.get('email'), // Use the submitted email as replyTo
             ishtml: false,
-            title: 'New Message from Contact Form',
+            title: 'New Message from Ekaya Contact Form 😊',
             body: `
                 Name: ${data.get('name')}
                 Company Name: ${data.get('company')}
@@ -141,8 +141,8 @@ async function sendMail(data) {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-                'X-RapidAPI-Key': apiKey,
-                'X-RapidAPI-Host': 'mail-sender-api1.p.rapidapi.com'
+                'X-RapidAPI-Key': '31257d2cf5msh4aa2f902e119ecbp112e62jsn5b81efd50058',
+                'X-RapidAPI-Host': 'rapidmail.p.rapidapi.com'
             },
             body: JSON.stringify(body)
         };
