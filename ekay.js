@@ -1,42 +1,40 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Navbar links functionality
     var navLinks = document.querySelectorAll(".navbar-nav .nav-link");
     navLinks.forEach(function(navLink) {
-      navLink.addEventListener("click", function() {
-        var navbarToggler = document.querySelector(".navbar-toggler");
-        if (navbarToggler.classList.contains("collapsed")) {
-          return; // Navbar is already collapsed, no need to close it
-        }
-        var navbarCollapse = document.querySelector(".navbar-collapse");
-        navbarCollapse.classList.remove("show");
-        navbarToggler.classList.add("collapsed");
-      });
+        navLink.addEventListener("click", function() {
+            var navbarToggler = document.querySelector(".navbar-toggler");
+            if (navbarToggler.classList.contains("collapsed")) {
+                return; // Navbar is already collapsed, no need to close it
+            }
+            var navbarCollapse = document.querySelector(".navbar-collapse");
+            navbarCollapse.classList.remove("show");
+            navbarToggler.classList.add("collapsed");
+        });
     });
-  });
-document.addEventListener('DOMContentLoaded', function() {
-  window.addEventListener('scroll', function() {
-      var navbar = document.querySelector('.navbar');
-      if (window.scrollY > navbar.offsetTop) {
-          navbar.classList.add('sticky-nav');
-      } else {
-          navbar.classList.remove('sticky-nav');
-      }
-  });
-});
-document.addEventListener("DOMContentLoaded", function() {
-    var backToTopButton = document.getElementById("back-to-top");
-    
-    window.addEventListener("scroll", function() {
-      backToTopButton.style.display = window.scrollY > 260 ? "flex" : "none";
-    });
-    
-    backToTopButton.addEventListener("click", function(e) {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-    });
-document.addEventListener("DOMContentLoaded", function() {
-    var highlightedElements = []; // To store highlighted elements
 
+    // Sticky navigation functionality
+    window.addEventListener('scroll', function() {
+        var navbar = document.querySelector('.navbar');
+        if (window.scrollY > navbar.offsetTop) {
+            navbar.classList.add('sticky-nav');
+        } else {
+            navbar.classList.remove('sticky-nav');
+        }
+    });
+
+    // Back to top button functionality
+    var backToTopButton = document.getElementById("back-to-top");
+    window.addEventListener("scroll", function() {
+        backToTopButton.style.display = window.scrollY > 260 ? "flex" : "none";
+    });
+    backToTopButton.addEventListener("click", function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Search functionality
+    var highlightedElements = []; // To store highlighted elements
     document.querySelector(".d-flex").addEventListener("submit", function(event) {
         event.preventDefault(); // Prevent form submission
 
@@ -75,7 +73,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-
         // Check for the searched item in table cells (both Name and FEMA #)
         var tableRows = document.querySelectorAll("#products table tbody tr");
         tableRows.forEach(function(row) {
@@ -92,21 +89,18 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
 
-       // Display result
-       if (!found) {
-        // Redirect to the contact page using its ID
-        window.location.href = "#contact";
-        var alertMessage = "Please contact us on Phone or Email for further assistance.";
-        alert(alertMessage);
-        
-    }
-    
-
-        
+        // Display result
+        if (!found) {
+            // Redirect to the contact page using its ID
+            window.location.href = "#contact";
+            var alertMessage = "Please contact us on Phone or Email for further assistance.";
+            alert(alertMessage);
+        }
 
         // Clear the search input
         document.getElementById("searchInput").value = "";
     });
+
 });
 
 // Function to highlight similar words
@@ -126,6 +120,7 @@ function resetTextHighlight(element) {
     element.innerHTML = element.textContent;
 }
 
+// jQuery document ready
 $(document).ready(function() {
     // Change border color on focus
     $('.form-control').focus(function() {
@@ -137,12 +132,33 @@ $(document).ready(function() {
     });
 });
 
+const url = 'https://mail-sender4.p.rapidapi.com/mail/html-content';
+    const options = {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'X-RapidAPI-Key': '31257d2cf5msh4aa2f902e119ecbp112e62jsn5b81efd50058',
+		'X-RapidAPI-Host': 'mail-sender4.p.rapidapi.com'
+      },
+      body: JSON.stringify({
+        username: 'sender@gmail.com',
+        password: 'acc-pass',
+        receiver: 'parthpatel4906@gmail.com', // Updated receiver email
+        title: 'mail title',
+        subject: 'mail subject',
+        htmlContent: 'html-based content to mail body'
+      })
+    };
 
+    async function sendMail() {
+      try {
+        const response = await fetch(url, options);
+        const result = await response.text();
+        console.log(result);
+      } catch (error) {
+        console.error(error);
+      }
+    }
 
-
-
-
-
-
-
-
+    // Call the function to send the mail
+    sendMail();
