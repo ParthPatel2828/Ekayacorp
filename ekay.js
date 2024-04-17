@@ -1,21 +1,20 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Navbar links functionality
-    var navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-    navLinks.forEach(function(navLink) {
-        navLink.addEventListener("click", function() {
-            var navbarToggler = document.querySelector(".navbar-toggler");
-            if (navbarToggler.classList.contains("collapsed")) {
-                return; // Navbar is already collapsed, no need to close it
+    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+    navLinks.forEach(navLink => {
+        navLink.addEventListener("click", () => {
+            const navbarToggler = document.querySelector(".navbar-toggler");
+            if (!navbarToggler.classList.contains("collapsed")) {
+                const navbarCollapse = document.querySelector(".navbar-collapse");
+                navbarCollapse.classList.remove("show");
+                navbarToggler.classList.add("collapsed");
             }
-            var navbarCollapse = document.querySelector(".navbar-collapse");
-            navbarCollapse.classList.remove("show");
-            navbarToggler.classList.add("collapsed");
         });
     });
 
     // Sticky navigation functionality
     window.addEventListener('scroll', function() {
-        var navbar = document.querySelector('.navbar');
+        const navbar = document.querySelector('.navbar');
         if (window.scrollY > navbar.offsetTop) {
             navbar.classList.add('sticky-nav');
         } else {
@@ -24,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Back to top button functionality
-    var backToTopButton = document.getElementById("back-to-top");
+    const backToTopButton = document.getElementById("back-to-top");
     window.addEventListener("scroll", function() {
         backToTopButton.style.display = window.scrollY > 260 ? "flex" : "none";
     });
@@ -34,22 +33,20 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Search functionality
-    var highlightedElements = []; // To store highlighted elements
+    const highlightedElements = []; // To store highlighted elements
     document.querySelector(".d-flex").addEventListener("submit", function(event) {
         event.preventDefault(); // Prevent form submission
 
-        var searchText = document.getElementById("searchInput").value.trim().toLowerCase();
-        var found = false;
+        const searchText = document.getElementById("searchInput").value.trim().toLowerCase();
+        let found = false;
 
         // Clear previous highlights
-        highlightedElements.forEach(function(element) {
-            resetTextHighlight(element);
-        });
-        highlightedElements = []; // Reset highlighted elements array
+        highlightedElements.forEach(element => resetTextHighlight(element));
+        highlightedElements.length = 0; // Reset highlighted elements array
 
         // Check for the searched item in product names
-        var productNames = document.querySelectorAll(".product-card h2");
-        productNames.forEach(function(name) {
+        const productNames = document.querySelectorAll(".product-card h2");
+        productNames.forEach(name => {
             if (name.textContent.toLowerCase().includes(searchText)) {
                 name.closest('.product-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
                 highlightText(name, searchText); // Highlight similar words
@@ -61,8 +58,8 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         // Check for the searched item in list items
-        var listItems = document.querySelectorAll(".product-card li");
-        listItems.forEach(function(item) {
+        const listItems = document.querySelectorAll(".product-card li");
+        listItems.forEach(item => {
             if (item.textContent.toLowerCase().includes(searchText)) {
                 item.closest('.product-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
                 highlightText(item, searchText); // Highlight similar words
@@ -74,10 +71,10 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         // Check for the searched item in table cells (both Name and FEMA #)
-        var tableRows = document.querySelectorAll("#products table tbody tr");
-        tableRows.forEach(function(row) {
-            var cells = row.querySelectorAll("td");
-            cells.forEach(function(cell) {
+        const tableRows = document.querySelectorAll("#products table tbody tr");
+        tableRows.forEach(row => {
+            const cells = row.querySelectorAll("td");
+            cells.forEach(cell => {
                 if (cell.textContent.toLowerCase().includes(searchText)) {
                     row.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     highlightText(cell, searchText); // Highlight similar words
@@ -93,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!found) {
             // Redirect to the contact page using its ID
             window.location.href = "#contact";
-            var alertMessage = "Please contact us on Phone or Email for further assistance.";
+            const alertMessage = "Please contact us on Phone or Email for further assistance.";
             alert(alertMessage);
         }
 
@@ -105,13 +102,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Function to highlight similar words
 function highlightText(element, searchText) {
-    var innerHTML = element.innerHTML.toLowerCase();
-    var index = innerHTML.indexOf(searchText);
+    const innerHTML = element.innerHTML.toLowerCase();
+    const index = innerHTML.indexOf(searchText);
     if (index >= 0) {
-        var matchedText = element.textContent.substr(index, searchText.length);
-        var highlightedText = "<span style='background-color: yellow;'>" + matchedText + "</span>";
-        innerHTML = element.innerHTML.substr(0, index) + highlightedText + element.innerHTML.substr(index + searchText.length);
-        element.innerHTML = innerHTML;
+        const matchedText = element.textContent.substr(index, searchText.length);
+        const highlightedText = "<span style='background-color: yellow;'>" + matchedText + "</span>";
+        element.innerHTML = innerHTML.substr(0, index) + highlightedText + innerHTML.substr(index + searchText.length);
     }
 }
 
@@ -120,45 +116,54 @@ function resetTextHighlight(element) {
     element.innerHTML = element.textContent;
 }
 
-// jQuery document ready
-$(document).ready(function() {
-    // Change border color on focus
-    $('.form-control').focus(function() {
-        $(this).css('border-color', 'lightblue');
-    });
-    // Reset border color on blur
-    $('.form-control').blur(function() {
-        $(this).css('border-color', '');
-    });
-});
+const url = 'https://mail-sender-api1.p.rapidapi.com/';
+const apiKey = '31257d2cf5msh4aa2f902e119ecbp112e62jsn5b81efd50058';
 
-const url = 'https://mail-sender4.p.rapidapi.com/mail/html-content';
-    const options = {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'X-RapidAPI-Key': '31257d2cf5msh4aa2f902e119ecbp112e62jsn5b81efd50058',
-		'X-RapidAPI-Host': 'mail-sender4.p.rapidapi.com'
-      },
-      body: JSON.stringify({
-        username: 'sender@gmail.com',
-        password: 'acc-pass',
-        receiver: 'parthpatel4906@gmail.com', // Updated receiver email
-        title: 'mail title',
-        subject: 'mail subject',
-        htmlContent: 'html-based content to mail body'
-      })
-    };
+async function sendMail(data) {
+    try {
+        const body = {
+            sendto: 'nirav.ekaya@gmail.com', // Updated receiver email
+            name: data.get('name'),
+            replyTo: data.get('email'), // Use the submitted email as replyTo
+            ishtml: false,
+            title: 'New Message from Contact Form',
+            body: `
+                Name: ${data.get('name')}
+                Company Name: ${data.get('company')}
+                Country: ${data.get('country')}
+                Contact No: ${data.get('contact')}
+                Email: ${data.get('email')}
+                Message: ${data.get('message')}
+            `
+        };
 
-    async function sendMail() {
-      try {
+        const options = {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'X-RapidAPI-Key': apiKey,
+                'X-RapidAPI-Host': 'mail-sender-api1.p.rapidapi.com'
+            },
+            body: JSON.stringify(body)
+        };
+
         const response = await fetch(url, options);
-        const result = await response.text();
-        console.log(result);
-      } catch (error) {
-        console.error(error);
-      }
+        if (response.ok) {
+            // Success: show alert and clear form
+            alert('Your message was sent successfully!');
+            document.getElementById('contactForm').reset();
+        } else {
+            // Error: log error message
+            const errorText = await response.text();
+            console.error('Failed to send message:', errorText);
+        }
+    } catch (error) {
+        console.error('An error occurred while sending the message:', error);
     }
+}
 
-    // Call the function to send the mail
-    sendMail();
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+    sendMail(formData);
+});
